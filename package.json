@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "node,koa2,api\r # title\r 使用node框架koa2编写后端api，操作mysql数据库提供数据服务，为前端提供api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanghongliang/project.git"
+  },
+  "author": "fanghl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanghongliang/project/issues"
+  },
+  "homepage": "https://github.com/fanghongliang/project#readme",
+  "dependencies": {
+    "koa": "^2.8.1"
+  }
+}
