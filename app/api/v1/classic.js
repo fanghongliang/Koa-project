@@ -1,17 +1,16 @@
 const Router = require('koa-router')
 const router = new Router()
 
+const {HttpException} = require('../../../core/http-exception')
+
 router.post('/v1/:id/classic/latest', (ctx, next)=> {
   const path = ctx.params    //url链接中参数
   const query = ctx.request.query     //?后面的query参数
   const headers = ctx.request.header    //header里面的参数，如token
   const body = ctx.request.body   //body里面的json参数
 
-  if(query) {
-    const error = new Error('为啥错误')
-    error.errorCode = 601
-    error.status = 400
-    error.requestUrl = `${ctx.method}  ${ctx.path}`
+  if(true) {
+    const error = new HttpException('为啥错误', 601, 400)
     throw error
   }
 
