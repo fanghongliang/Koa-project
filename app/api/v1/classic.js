@@ -6,6 +6,15 @@ router.post('/v1/:id/classic/latest', (ctx, next)=> {
   const query = ctx.request.query     //?后面的query参数
   const headers = ctx.request.header    //header里面的参数，如token
   const body = ctx.request.body   //body里面的json参数
+
+  if(query) {
+    const error = new Error('为啥错误')
+    error.errorCode = 601
+    error.status = 400
+    error.requestUrl = `${ctx.method}  ${ctx.path}`
+    throw error
+  }
+
   if(path.id == 3 ) {
     ctx.body = {
       key: "classics",
@@ -14,9 +23,8 @@ router.post('/v1/:id/classic/latest', (ctx, next)=> {
     } 
   } else {
     ctx.body = {
-      key: "classics",
-      name: "fanghl",
-      content: `你fail传输了前后端内容`
+      status: `ok`,
+      code: 601
     }
   }
 })
