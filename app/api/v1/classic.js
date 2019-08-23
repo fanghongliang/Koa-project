@@ -10,8 +10,8 @@ router.post('/v1/:id/classic/latest', (ctx, next)=> {
   const body = ctx.request.body   //body里面的json参数
 
   if(true) {
-    const error = new global.errs.ParameterException('错误', 100)   //param: msg, errorCode
-    throw error
+    const error = new global.errs.ParameterException('错误', 605)   //param: msg, errorCode
+    // throw error
   }
 
   if(path.id == 3 ) {
