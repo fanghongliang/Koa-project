@@ -1,7 +1,7 @@
 const Router = require('koa-router')
 const router = new Router()
 
-const {HttpException} = require('../../../core/http-exception')
+// const {HttpException, ParameterException} = require('../../../core/http-exception')
 
 router.post('/v1/:id/classic/latest', (ctx, next)=> {
   const path = ctx.params    //url链接中参数
@@ -10,7 +10,7 @@ router.post('/v1/:id/classic/latest', (ctx, next)=> {
   const body = ctx.request.body   //body里面的json参数
 
   if(true) {
-    const error = new HttpException('为啥错误', 601, 400)
+    const error = new global.errs.ParameterException('错误', 100)   //param: msg, errorCode
     throw error
   }
 
